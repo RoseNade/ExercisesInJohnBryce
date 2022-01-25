@@ -31,7 +31,7 @@ public class Test {
         System.out.println(dog2);
         System.out.println(dog3);
         System.out.println(dog4);
-        System.out.println("----------");
+        System.out.println("-----------");
 
         Fish fish1 = new Fish();
         Fish fish2 = new Fish("Boy", "Stav");
