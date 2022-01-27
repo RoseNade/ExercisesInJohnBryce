@@ -13,12 +13,12 @@ public class ex9 {
 
     public static void fill(int[][] arr, int num){
         for (int i = num - 1; i < arr.length - num + 1; i++) {
-            for (int j = num - 1; j < arr[i].length - num + 1; j++) {
-                if (i == num - 1 || i == arr.length - num) {
-                    arr[i][j] = num;
-                    arr[j][i] = num;
+            if (i == num - 1 || i == arr.length - num) {
+                for (int j = num - 1; j < arr[i].length - num + 1; j++) {
+                        arr[i][j] = num;
+                        arr[j][i] = num;
+                    }
                 }
-            }
         }
     }
 
