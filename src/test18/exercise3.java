@@ -29,7 +29,7 @@ public class exercise3 {
         }
     }
 
-    // could've used switch but this is a lot more tidier
+    // add number to the right column and row
     public static void whereTo(char[][] arr, int input){
         int row = (input - 1) / 3;
         int col = input - (3*row) - 1;
