@@ -11,6 +11,7 @@ public class exercise3 {
     private static int turnsPassed = 1;
 
     public static void main(String[] args) {
+        intro();
         fillArray();
         show();
         input();
@@ -69,17 +70,6 @@ public class exercise3 {
         }
     }
 
-//    public static boolean hasPlace(char[][] arr) {
-//        for (int i = 0; i < arr.length; i++) {
-//            for (int j = 0; j < arr[i].length; j++) {
-//                if (arr[i][j] != 'X' && arr[i][j] != 'O') {
-//                    return false;
-//                }
-//            }
-//        }
-//        return true;
-//    }
-
 
     public static boolean checkWin(char[][] arr) {
         for (int i = 0; i < arr.length; i++) {
@@ -109,6 +99,9 @@ public class exercise3 {
         }
     }
 
+    public static void intro(){
+        System.out.println("Welcome to my Tic Tac Toe game Kobush, ENJOY");
+    }
 
     public static void fillArray() {
         int counter = 1;
