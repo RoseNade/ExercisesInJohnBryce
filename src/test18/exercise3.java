@@ -8,6 +8,7 @@ public class exercise3 {
     private static char s = 'X';
     private static Scanner sc = new Scanner(System.in);
     private static boolean user1Turn = true;
+    private static int turnsPassed = 1;
 
     public static void main(String[] args) {
         fillArray();
@@ -34,13 +35,14 @@ public class exercise3 {
         if(arr[row][col] == input + '0'){
             arr[row][col] = s;
             user1Turn = !user1Turn;
+            turnsPassed++;
         }else{
             System.out.println("Invalid input");
         }
     }
 
     public static void input() {
-        if (!hasPlace(arr)) {
+        if (turnsPassed <= 9) {
             System.out.print("Choose a place to input:");
             int inputUser = sc.nextInt();
             if(inputUser > 0 && inputUser < 10){
@@ -55,7 +57,7 @@ public class exercise3 {
         }
         checkTurn();
         show();
-        while (!checkWin(arr)) {
+        if (!checkWin(arr)) {
             input();
             return;
         }
@@ -67,16 +69,16 @@ public class exercise3 {
         }
     }
 
-    public static boolean hasPlace(char[][] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[i].length; j++) {
-                if (arr[i][j] != 'X' && arr[i][j] != 'O') {
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
+//    public static boolean hasPlace(char[][] arr) {
+//        for (int i = 0; i < arr.length; i++) {
+//            for (int j = 0; j < arr[i].length; j++) {
+//                if (arr[i][j] != 'X' && arr[i][j] != 'O') {
+//                    return false;
+//                }
+//            }
+//        }
+//        return true;
+//    }
 
 
     public static boolean checkWin(char[][] arr) {
