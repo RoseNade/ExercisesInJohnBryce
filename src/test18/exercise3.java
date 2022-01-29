@@ -56,9 +56,9 @@ public class exercise3 {
             System.out.println("it's a tie");
             return;
         }
-        checkTurn();
         show();
         if (!checkWin(arr)) {
+            checkTurn();
             input();
             return;
         }
@@ -70,16 +70,18 @@ public class exercise3 {
         }
     }
 
-
+    // check whether someone won the game
     public static boolean checkWin(char[][] arr) {
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
                 // check rows
                 if (arr[i][0] == arr[i][1] && arr[i][1] == arr[i][2]) {
                     return true;
+                // check columns
                 } else if (arr[0][j] == arr[1][j] && arr[1][j] == arr[2][j]) {
                     return true;
-                } else if (arr[0][0] == arr[1][1] && arr[1][1] == arr[2][2]) {
+                // check diagonal
+                } else if (arr[0][0] == arr[1][1] && arr[1][1] == arr[2][2] || arr[0][2] == arr[1][1] && arr[1][1] == arr[2][0]) {
                     return true;
                 }
             }
